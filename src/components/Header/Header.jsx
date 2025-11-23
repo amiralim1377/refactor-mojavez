@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLink = [
-  { label: "خانه", href: "/" },
-  { label: "درباره ما", href: "/about" },
-  { label: "راهنما", href: "/guide" },
   { label: "درگاه ملی مجوز کشور", href: "/national-license-gateway" },
+  { label: "راهنما", href: "/guide" },
+  { label: "درباره ما", href: "/about" },
+  { label: "خانه", href: "/" },
 ];
 
 function Header() {
@@ -20,8 +20,8 @@ function Header() {
       <section className="flex gap-6 items-center justify-between ">
         <nav>
           <ul className="flex items-center gap-6">
-            {navLink.map((item) => (
-              <li key={item.href}>
+            {navLink.map((item, i) => (
+              <li key={i}>
                 <Link href={item.href} className="text-white transition">
                   {item.label}
                 </Link>
@@ -31,10 +31,11 @@ function Header() {
         </nav>
         <div>
           <Image
-            src={"/logo.png"}
-            className="mb-3"
-            width={150}
-            height={160}
+            src="/logo.png"
+            className="mb-3 w-36 h-auto"
+            width={0}
+            height={0}
+            sizes="100vw"
             alt="logo"
           />
         </div>
