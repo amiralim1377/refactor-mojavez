@@ -1,0 +1,31 @@
+import { Accordion } from "@radix-ui/react-accordion";
+import {
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import InputField from "../base/InputField";
+
+function LicenseHolderFilter(props) {
+  const { label, placeholder } = props;
+
+  return (
+    <div>
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full"
+        defaultValue="item-1"
+      >
+        <AccordionItem value="owner">
+          <AccordionTrigger>{label}</AccordionTrigger>
+          <AccordionContent>
+            <InputField placeholder={placeholder} name="licenseholder" />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  );
+}
+
+export default LicenseHolderFilter;

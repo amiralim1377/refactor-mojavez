@@ -1,3 +1,9 @@
+import LicenseMapFilter from "@/components/LicenseMapFilter/LicenseMapFilter";
+
 export default function Home() {
-  return <div>hey</div>;
+  return (
+    <div>
+      <LicenseMapFilter />
+    </div>
+  );
 }
