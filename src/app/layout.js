@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body dir="" className={`${vazirmatn.variable}`}>
         <Header />
-        {children}
+        <main className="container ">{children}</main>
       </body>
     </html>
   );
