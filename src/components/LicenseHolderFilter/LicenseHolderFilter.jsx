@@ -7,7 +7,7 @@ import {
 import InputField from "../base/InputField";
 
 function LicenseHolderFilter(props) {
-  const { label, placeholder } = props;
+  const { label, placeholder, name } = props;
 
   return (
     <div>
@@ -20,7 +20,7 @@ function LicenseHolderFilter(props) {
         <AccordionItem value="owner">
           <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
-            <InputField placeholder={placeholder} name="licenseholder" />
+            <InputField placeholder={placeholder} name={name} />
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -6,7 +6,6 @@ export default function InputField({
   label,
   placeholder,
   type = "text",
-  defaultValue = "",
 }) {
   const { control } = useFormContext();
   const {
@@ -15,7 +14,6 @@ export default function InputField({
   } = useController({
     name,
     control,
-    defaultValue,
   });
 
   return (
@@ -34,7 +32,9 @@ export default function InputField({
           invalid ? "form-input-error" : ""
         }`}
       />
-      {invalid && <span className="form-error">{error?.message}</span>}
+      {invalid && (
+        <span className="text-red-500 text-xs">{error?.message}</span>
+      )}
     </div>
   );
 }
