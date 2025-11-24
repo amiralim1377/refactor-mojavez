@@ -1,5 +1,5 @@
-import { Accordion } from "@radix-ui/react-accordion";
 import {
+  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
@@ -20,7 +20,11 @@ function LicenseHolderFilter(props) {
         <AccordionItem value="owner">
           <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
-            <InputField placeholder={placeholder} name={name} />
+            <InputField
+              placeholder={placeholder}
+              label="عنوان مجوز"
+              name={name}
+            />
           </AccordionContent>
         </AccordionItem>
       </Accordion>

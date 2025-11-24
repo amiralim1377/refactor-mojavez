@@ -1,12 +1,11 @@
-import LocationSelectWrapper from "../LocationSelectWrapper/LocationSelectWrapper";
+import InputField from "../base/InputField";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-
-function GeographicalLocation(props) {
+function BusinessLicenseFilter(props) {
   const { label } = props;
   return (
     <>
@@ -19,7 +18,7 @@ function GeographicalLocation(props) {
         <AccordionItem value="owner">
           <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
-            <LocationSelectWrapper />
+            <InputField placeholder="عنوان مجوز" name="licenseTitle" />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
@@ -27,4 +26,4 @@ function GeographicalLocation(props) {
   );
 }
 
-export default GeographicalLocation;
+export default BusinessLicenseFilter;

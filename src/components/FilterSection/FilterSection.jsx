@@ -9,6 +9,7 @@ import LicenseHolderFilter from "../LicenseHolderFilter/LicenseHolderFilter";
 import SliderField from "../base/SliderField";
 import SelectField from "../base/SelectField";
 import GeographicalLocation from "../GeographicalLocation/GeographicalLocation";
+import BusinessLicenseFilter from "../BusinessLicenseFilter/BusinessLicenseFilter";
 
 const formSchema = z.object({
   licenseholder: z.string().min(1, "دریافت کننده مجوز الزامی است"),
@@ -35,6 +36,7 @@ function FilterSection() {
       personType: "all",
       province: "",
       city: "",
+      licenseTitle: "",
     },
   });
 
@@ -49,8 +51,11 @@ function FilterSection() {
   };
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit, onError)}>
-        <div className="flex items-center gap-x-1">
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        className=" max-w-2xs w-full"
+      >
+        <div className="flex items-center gap-x-1 ">
           <Image src={FilterIcon} width={20} height={20} alt="filter-icon" />
           <span className="text-primary">فیلترها</span>
         </div>
@@ -84,15 +89,8 @@ function FilterSection() {
 
         <GeographicalLocation label="موقعیت جغرافیایی" />
 
-        <h3>کسب و کاری</h3>
-        <div>عنوان مجوز</div>
-        <div>دستگاه مرجع</div>
-        <div>دستکاه تابع</div>
-        <h3>تاریخ صدور آخرخین عملیات</h3>
-        <div>آز تاریخ</div>
-        <div>تاریخ</div>
-        <button>اعمال فیتلر</button>
-        <button>پاک کردن همه فیلترها</button>
+        <BusinessLicenseFilter label="کسب و کاری" />
+
         <button type="submit" className="bg-primary ">
           submit
         </button>
