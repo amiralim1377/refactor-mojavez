@@ -40,9 +40,8 @@ export default function LineChart({ data = [], title = "" }) {
       },
       data: seriesNames,
     },
-    xAxis: {
-      type: "category",
-      data: data.map((item) => item.Year),
+    yAxis: {
+      type: "value",
       axisLabel: { fontFamily: `var(${vazirmatn.variable})` },
     },
     xAxis: {
