@@ -11,19 +11,34 @@ import SelectField from "../base/SelectField";
 import GeographicalLocation from "../GeographicalLocation/GeographicalLocation";
 import BusinessLicenseFilter from "../BusinessLicenseFilter/BusinessLicenseFilter";
 
-const formSchema = z.object({
-  licenseholder: z.string().min(1, "دریافت کننده مجوز الزامی است"),
-  age: z.number().min(18).max(65),
-  gender: z.enum(["male", "female", "all"], {
-    required_error: "انتخاب جنسیت الزامی است",
-    invalid_type_error: "گزینه انتخابی معتبر نیست",
-  }),
-  personType: z.enum(["real", "legal", "all"], {
-    required_error: "انتخاب نوع شخصیت الزامی است",
-  }),
-  province: z.string().min(1, "استان الزامی است"),
-  city: z.string().min(1, "شهر الزامی است"),
-});
+const formSchema = z
+  .object({
+    licenseholder: z.string().optional(),
+    age: z.number().min(18).max(65).optional(),
+    gender: z.enum(["male", "female", "all"]).optional(),
+    personType: z.enum(["real", "legal", "all"]).optional(),
+    province: z.string().optional(),
+    city: z.string().optional(),
+    licenseTitle: z.string().max(100).optional(),
+    startDate: z.preprocess(
+      (val) => (val ? new Date(val) : undefined),
+      z.date().optional()
+    ),
+    endDate: z.preprocess(
+      (val) => (val ? new Date(val) : undefined),
+      z.date().optional()
+    ),
+  })
+  .refine(
+    (data) =>
+      Object.values(data).some(
+        (value) => value !== "" && value !== null && value !== undefined
+      ),
+    {
+      message: "حداقل یک فیلد باید پر شود",
+      path: [],
+    }
+  );
 
 function FilterSection() {
   const methods = useForm({

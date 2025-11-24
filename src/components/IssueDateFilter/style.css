@@ -1,0 +1,22 @@
+.custom-container {
+  width: 100%;
+}
+
+.custom-container .rmdp-input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 26px;
+}
+
+.rmdp-container .ep-arrow.custom-arrow::after {
+  background-color: blue;
+}
+
+.custom-input {
+  border-radius: 8px;
+  border: 1px #e5e7eb solid;
+  padding: 4px 12px;
+  background-color: white;
+  height: 36px;
+  width: 100%;
+}
