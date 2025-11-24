@@ -71,8 +71,8 @@ function FilterSection() {
           name="personType"
           label="نوع شخصیت"
           options={[
-            { value: "real", label: "حقیقی" },
-            { value: "legal", label: "حقوقی" },
+            { value: "real", label: "شخص حقیقی" },
+            { value: "legal", label: "شخص حقوقی" },
             { value: "all", label: "همه موارد" },
           ]}
         />
