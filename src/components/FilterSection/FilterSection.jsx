@@ -10,6 +10,7 @@ import SliderField from "../base/SliderField";
 import SelectField from "../base/SelectField";
 import GeographicalLocation from "../GeographicalLocation/GeographicalLocation";
 import BusinessLicenseFilter from "../BusinessLicenseFilter/BusinessLicenseFilter";
+import SubmitButton from "../base/SubmitButton";
 
 const formSchema = z
   .object({
@@ -108,8 +109,12 @@ function FilterSection() {
 
         <BusinessLicenseFilter label="کسب و کاری" />
 
-        <button type="submit" className="bg-primary ">
-          submit
+        <SubmitButton
+          className="bg-[#2563EB] px-4 py-2 hover:cursor-pointer  text-white w-full rounded-lg"
+          label="اعمال فیلتر"
+        />
+        <button className="bg-[##F3F4F6] mt-2 hover:bg-gray-200 px-4 py-2 hover:cursor-pointer  text-gray-800 w-full rounded-lg">
+          پاک کردن همه فیلترها
         </button>
       </form>
     </FormProvider>
