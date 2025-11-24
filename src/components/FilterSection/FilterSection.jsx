@@ -6,9 +6,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import LicenseHolderFilter from "../LicenseHolderFilter/LicenseHolderFilter";
+import SliderField from "../base/SliderField";
 
 const formSchema = z.object({
   licenseholder: z.string().min(1, "دریافت کننده مجوز الزامی است"),
+  age: z.number().min(18).max(65),
 });
 
 function FilterSection() {
@@ -17,6 +19,7 @@ function FilterSection() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       licenseholder: "",
+      age: 18,
     },
   });
 
@@ -42,7 +45,8 @@ function FilterSection() {
           placeholder="دریافت کننده مجوز"
           name="licenseholder"
         />
-        <div>رده سنی </div>
+        <SliderField name="age" label="رده سنی" min={18} max={65} step={1} />
+
         <div>جنسیت</div>
         <h1>موقعیت جغرافیایی</h1>
         <div>استان</div>
