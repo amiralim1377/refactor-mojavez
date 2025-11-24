@@ -15,7 +15,7 @@ function TripleGrid() {
       <div className="bg-gray-300 p-4 text-center">
         <AgeDistribution />
       </div>
-      <div className="bg-blue-200 p-4 text-center">
+      <div className="  text-center">
         <LicenseDistribution />
       </div>
     </div>
