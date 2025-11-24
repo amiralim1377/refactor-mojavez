@@ -37,6 +37,8 @@ function FilterSection() {
       province: "",
       city: "",
       licenseTitle: "",
+      startDate: "",
+      endDate: new Date(),
     },
   });
 

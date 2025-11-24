@@ -1,4 +1,5 @@
 import InputField from "../base/InputField";
+import IssueDateFilter from "../IssueDateFilter/IssueDateFilter";
 import {
   Accordion,
   AccordionContent,
@@ -19,6 +20,7 @@ function BusinessLicenseFilter(props) {
           <AccordionTrigger>{label}</AccordionTrigger>
           <AccordionContent>
             <InputField placeholder="عنوان مجوز" name="licenseTitle" />
+            <IssueDateFilter />
           </AccordionContent>
         </AccordionItem>
       </Accordion>
