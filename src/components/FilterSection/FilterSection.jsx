@@ -7,10 +7,15 @@ import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import LicenseHolderFilter from "../LicenseHolderFilter/LicenseHolderFilter";
 import SliderField from "../base/SliderField";
+import SelectField from "../base/SelectField";
 
 const formSchema = z.object({
   licenseholder: z.string().min(1, "دریافت کننده مجوز الزامی است"),
   age: z.number().min(18).max(65),
+  gender: z.enum(["male", "female", "all"], {
+    required_error: "انتخاب جنسیت الزامی است",
+    invalid_type_error: "گزینه انتخابی معتبر نیست",
+  }),
 });
 
 function FilterSection() {
@@ -20,6 +25,7 @@ function FilterSection() {
     defaultValues: {
       licenseholder: "",
       age: 18,
+      gender: "all",
     },
   });
 
@@ -47,7 +53,16 @@ function FilterSection() {
         />
         <SliderField name="age" label="رده سنی" min={18} max={65} step={1} />
 
-        <div>جنسیت</div>
+        <SelectField
+          name="gender"
+          label="جنسیت"
+          options={[
+            { value: "male", label: "مرد" },
+            { value: "female", label: "زن" },
+            { value: "all", label: "همه" },
+          ]}
+        />
+
         <h1>موقعیت جغرافیایی</h1>
         <div>استان</div>
         <div>َشهرستان</div>
