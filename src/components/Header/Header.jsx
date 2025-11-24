@@ -11,8 +11,8 @@ const navLink = [
 
 function Header() {
   return (
-    <header className="bg-primary p-4 flex items-center justify-around ">
-      <section className="flex gap-6 items-center justify-between ">
+    <header className="bg-primary  p-4 flex items-center justify-around ">
+      <section className=" flex items-center justify-between container">
         <div>
           <Image
             src="/logo.png"
@@ -23,7 +23,7 @@ function Header() {
             alt="logo"
           />
         </div>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex items-center gap-6">
             {navLink.map((item, i) => (
               <li key={i}>
@@ -34,13 +34,49 @@ function Header() {
             ))}
           </ul>
         </nav>
+        <div className="flex items-center gap-x-1">
+          <User stroke="white" fill="white" className="w-5 h-5" />
+          <span className="text-white">ورود</span>
+        </div>
       </section>
-      <div className="flex items-center gap-x-1">
-        <User stroke="white" fill="white" className="w-5 h-5" />
-        <span className="text-white">ورود</span>
-      </div>
     </header>
   );
 }
 
 export default Header;
+
+// function Header() {
+//   return (
+//     <header className="bg-primary  p-4 flex items-center justify-around ">
+//       <section className="flex gap-6 items-center justify-between ">
+//         <div>
+//           <Image
+//             src="/logo.png"
+//             className="mb-3 w-36 h-auto"
+//             width={0}
+//             height={0}
+//             sizes="100vw"
+//             alt="logo"
+//           />
+//         </div>
+//         <nav>
+//           <ul className="flex items-center gap-6">
+//             {navLink.map((item, i) => (
+//               <li key={i}>
+//                 <Link href={item.href} className="text-white transition">
+//                   {item.label}
+//                 </Link>
+//               </li>
+//             ))}
+//           </ul>
+//         </nav>
+//       </section>
+//       <div className="flex items-center gap-x-1">
+//         <User stroke="white" fill="white" className="w-5 h-5" />
+//         <span className="text-white">ورود</span>
+//       </div>
+//     </header>
+//   );
+// }
+
+// export default Header;
