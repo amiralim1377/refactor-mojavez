@@ -8,6 +8,7 @@ import { z } from "zod";
 import LicenseHolderFilter from "../LicenseHolderFilter/LicenseHolderFilter";
 import SliderField from "../base/SliderField";
 import SelectField from "../base/SelectField";
+import GeographicalLocation from "../GeographicalLocation/GeographicalLocation";
 
 const formSchema = z.object({
   licenseholder: z.string().min(1, "دریافت کننده مجوز الزامی است"),
@@ -19,6 +20,8 @@ const formSchema = z.object({
   personType: z.enum(["real", "legal", "all"], {
     required_error: "انتخاب نوع شخصیت الزامی است",
   }),
+  province: z.string().min(1, "استان الزامی است"),
+  city: z.string().min(1, "شهر الزامی است"),
 });
 
 function FilterSection() {
@@ -30,6 +33,8 @@ function FilterSection() {
       age: 18,
       gender: "all",
       personType: "all",
+      province: "",
+      city: "",
     },
   });
 
@@ -77,9 +82,8 @@ function FilterSection() {
           ]}
         />
 
-        <h1>موقعیت جغرافیایی</h1>
-        <div>استان</div>
-        <div>َشهرستان</div>
+        <GeographicalLocation label="موقعیت جغرافیایی" />
+
         <h3>کسب و کاری</h3>
         <div>عنوان مجوز</div>
         <div>دستگاه مرجع</div>
