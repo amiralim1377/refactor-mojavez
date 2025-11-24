@@ -16,6 +16,9 @@ const formSchema = z.object({
     required_error: "انتخاب جنسیت الزامی است",
     invalid_type_error: "گزینه انتخابی معتبر نیست",
   }),
+  personType: z.enum(["real", "legal", "all"], {
+    required_error: "انتخاب نوع شخصیت الزامی است",
+  }),
 });
 
 function FilterSection() {
@@ -26,6 +29,7 @@ function FilterSection() {
       licenseholder: "",
       age: 18,
       gender: "all",
+      personType: "all",
     },
   });
 
@@ -60,6 +64,16 @@ function FilterSection() {
             { value: "male", label: "مرد" },
             { value: "female", label: "زن" },
             { value: "all", label: "همه" },
+          ]}
+        />
+
+        <SelectField
+          name="personType"
+          label="نوع شخصیت"
+          options={[
+            { value: "real", label: "حقیقی" },
+            { value: "legal", label: "حقوقی" },
+            { value: "all", label: "همه موارد" },
           ]}
         />
 
