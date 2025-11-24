@@ -4,16 +4,15 @@ import React from "react";
 import ReactECharts from "echarts-for-react";
 import { vazirmatn } from "@/app/fonts/fonts";
 
-export default function DoughnutChart({ data = [], title = "" }) {
+export default function DynamicPieChart({ data = [], title = "" }) {
   const option = {
-    color: ["#4CAF50", "#FF9800", "#2196F3"],
+    color: ["#2196F3", "#4CAF50", "#9C27B0", "#FFEB3B", "#9E9E9E"],
     title: {
-      text: title,
       left: "center",
       top: "center",
       textStyle: {
-        fontSize: 12,
-        fontWeight: "normal",
+        fontSize: 10,
+        fontWeight: "bold",
         fontFamily: `var(${vazirmatn.variable})`,
         color: "#333",
       },
@@ -22,7 +21,7 @@ export default function DoughnutChart({ data = [], title = "" }) {
       trigger: "item",
       formatter: "{b}: {c} ({d}%)",
       textStyle: { fontFamily: `var(${vazirmatn.variable})` },
-      position: "top",
+      position: "left",
       confine: true,
     },
     legend: {
@@ -40,26 +39,20 @@ export default function DoughnutChart({ data = [], title = "" }) {
       {
         name: "Items",
         type: "pie",
-        radius: ["40%", "65%"],
+        radius: ["80%"],
         avoidLabelOverlap: false,
         label: { show: false },
         emphasis: {
-          label: {
-            show: false,
-            fontSize: 12,
-            fontWeight: "bold",
-            fontFamily: `var(${vazirmatn.variable})`,
-            formatter: "{b}\n{d}%",
-            padding: [3, 5, 3, 5],
-          },
+          scale: true,
+          scaleSize: 10,
         },
         labelLine: { show: false },
         itemStyle: {
-          borderRadius: 4,
+          borderRadius: 2,
           borderColor: "#fff",
-          borderWidth: 2,
+          borderWidth: 1,
         },
-        data,
+        data: data.length ? data : [],
         animationType: "scale",
         animationEasing: "cubicOut",
         animationDuration: 1000,

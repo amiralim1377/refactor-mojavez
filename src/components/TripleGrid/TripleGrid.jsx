@@ -4,18 +4,14 @@ import PersonalityDistribution from "../PersonalityDistribution/PersonalityDistr
 
 function TripleGrid() {
   return (
-    <div
-      className="mt-4 grid gap-4 
-                    grid-cols-1 
-                    md:grid-cols-[1fr_2fr_1fr]"
-    >
-      <div className="bg-green-200 p-4 text-center">
+    <div className="mt-4 grid       grid-cols-1    md:grid-cols-[1fr_2fr_1fr] gap-4 ">
+      <div className="min-w-0">
         <PersonalityDistribution />
       </div>
-      <div className="bg-gray-300 p-4 text-center">
+      <div className=" min-w-0 ">
         <AgeDistribution />
       </div>
-      <div className="  text-center">
+      <div className=" min-w-0">
         <LicenseDistribution />
       </div>
     </div>
