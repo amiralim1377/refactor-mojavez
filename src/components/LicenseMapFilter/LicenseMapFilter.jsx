@@ -1,4 +1,5 @@
 import FilterSection from "../FilterSection/FilterSection";
+import LicenseOverview from "../LicenseOverview/LicenseOverview";
 
 function LicenseMapFilter() {
   return (
@@ -10,7 +11,7 @@ function LicenseMapFilter() {
       <div className="license-map-filter__map">Map Section</div>
 
       {/* بخش آمار / Summary */}
-      <div className="license-map-filter__stats">Stats Section</div>
+      <LicenseOverview />
     </div>
   );
 }
