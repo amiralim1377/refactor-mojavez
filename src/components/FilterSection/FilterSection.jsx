@@ -58,7 +58,7 @@ function FilterSection() {
     },
   });
 
-  const { handleSubmit, control, resetField, reset } = methods;
+  const { handleSubmit } = methods;
 
   function onSubmit(data) {
     console.log(data);
@@ -67,12 +67,10 @@ function FilterSection() {
   const onError = (err) => {
     console.log("validation errors", err);
   };
+
   return (
     <FormProvider {...methods}>
-      <form
-        onSubmit={handleSubmit(onSubmit, onError)}
-        className=" max-w-2xs w-full"
-      >
+      <form onSubmit={handleSubmit(onSubmit, onError)} className="  w-full">
         <div className="flex items-center gap-x-1 ">
           <Image src={FilterIcon} width={20} height={20} alt="filter-icon" />
           <span className="text-primary">فیلترها</span>

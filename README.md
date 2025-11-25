@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Refactor Mojavez
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Refactor Mojavez is a modern web application built with Next.js and React, featuring interactive maps using Leaflet, data visualization with ECharts, and a fully responsive layout. The project leverages Shadcn UI for reusable, accessible components and Tailwind CSS for styling.
+
+## 🛠 Technologies Used
+
+This project is built using the following technologies:
+
+- **Next.js 16.0.3** – React framework for server-side rendering and routing
+- **React 19.2** & **React DOM 19.2** – Core UI library
+- **React Hook Form 7.66.1** & **@hookform/resolvers 5.2.2** – Form handling and validation
+- **Leaflet 1.9.4** & **React Leaflet 5.0.0** – Interactive maps and map components
+- **Tailwind CSS 4** & **tw-animate-css 1.4.0** – Utility-first styling and animations
+- **Shadcn UI** – Component library built on Radix UI and Tailwind CSS
+- **Radix UI** – Accessible UI primitives: Accordion, Label, Select, Separator, Slider, Slot
+- **ECharts 6.0.0** & **echarts-for-react 3.0.5** – Data visualization / charts
+- **Lucide React 0.554.0** – Icons library
+- **Zod 4.1.12** – Schema validation for forms and data
+- **clsx 2.1.1** & **class-variance-authority 0.7.1** – Conditional and variant-based class handling
+- **React Multi Date Picker 4.5.2** – Date picking component
+
+## Features
+
+- Interactive maps of Iran with cities markers and GeoJSON support.
+- Full responsive design for mobile, tablet, and desktop screens.
+- Dynamic filtering and summary sections integrated with the map.
+- Charts and data visualization using ECharts.
+- Form validation and handling with React Hook Form and Zod.
+- Custom UI components using Shadcn UI and Radix UI primitives.
+- Tailwind CSS animations and utility classes for fast styling.
+
+## Installation
 
 ```bash
+git clone https://github.com/amiralim1377/refactor-mojavez.git
+cd refactor-mojavez
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Visit `http://localhost:3000` to view the application.
+- Use the interactive map to explore different cities.
+- Filter data and view summaries through the responsive interface.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License

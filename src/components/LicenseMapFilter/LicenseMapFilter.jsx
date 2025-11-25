@@ -1,17 +1,24 @@
+import { Suspense } from "react";
 import FilterSection from "../FilterSection/FilterSection";
 import LicenseOverview from "../LicenseOverview/LicenseOverview";
+import MapWrapper from "../MapWrapper/MapWrapper";
 
 function LicenseMapFilter() {
   return (
-    <div className="flex items-center justify-between bg-white p-4 rounded-2xl mt-4 ">
-      {/* بخش فیلتر */}
-      <FilterSection />
+    <div className="flex flex-col-reverse lg:flex-row items-start justify-between bg-white gap-4 p-4 rounded-2xl mt-4">
+      <div className="w-full lg:w-auto order-3 lg:order-1">
+        <FilterSection />
+      </div>
 
-      {/* بخش نقشه */}
-      <div className="license-map-filter__map">Map Section</div>
+      <div className="w-full lg:w-2/3 order-2 lg:order-2">
+        <Suspense fallback={<p>laodng</p>}>
+          <MapWrapper />
+        </Suspense>
+      </div>
 
-      {/* بخش آمار / Summary */}
-      <LicenseOverview />
+      <div className="w-full lg:w-auto order-1 lg:order-3">
+        <LicenseOverview />
+      </div>
     </div>
   );
 }
