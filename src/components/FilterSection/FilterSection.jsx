@@ -70,17 +70,23 @@ function FilterSection() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit, onError)} className="  w-full">
-        <div className="flex items-center gap-x-1 ">
+      <form
+        onSubmit={handleSubmit(onSubmit, onError)}
+        className="w-full flex flex-col gap-4"
+      >
+        <div className="flex items-center gap-x-1">
           <Image src={FilterIcon} width={20} height={20} alt="filter-icon" />
           <span className="text-primary">فیلترها</span>
         </div>
+
         <Separator />
+
         <LicenseHolderFilter
           label="دارنده مجوز"
           placeholder="دریافت کننده مجوز"
           name="licenseholder"
         />
+
         <SliderField name="age" label="رده سنی" min={18} max={65} step={1} />
 
         <SelectField
@@ -108,11 +114,12 @@ function FilterSection() {
         <BusinessLicenseFilter label="کسب و کاری" />
 
         <SubmitButton
-          className="bg-[#2563EB] px-4 py-2 hover:cursor-pointer  text-white w-full rounded-lg"
+          className="bg-[#2563EB] px-4 py-2 text-white w-full rounded-lg hover:cursor-pointer"
           label="اعمال فیلتر"
         />
-        <button className="bg-[##F3F4F6] mt-2 hover:bg-gray-200 px-4 py-2 hover:cursor-pointer  text-gray-800 w-full rounded-lg">
-          پاک کردن همه فیلترها
+
+        <button className="bg-[#F3F4F6] mt-2 hover:bg-gray-200 px-4 py-2 text-gray-800 w-full text-sm rounded-lg">
+          حذف فیلتر
         </button>
       </form>
     </FormProvider>
