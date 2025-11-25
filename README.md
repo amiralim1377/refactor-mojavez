@@ -4,6 +4,9 @@
 
 Refactor Mojavez is a modern web application built with Next.js and React, featuring interactive maps using Leaflet, data visualization with ECharts, and a fully responsive layout. The project leverages Shadcn UI for reusable, accessible components and Tailwind CSS for styling.
 
+![Description](./public/refactor-mojavez-1.JPG)
+![Description](./public/refactor-mojavez-2.JPG)
+
 ## 🛠 Technologies Used
 
 This project is built using the following technologies:
