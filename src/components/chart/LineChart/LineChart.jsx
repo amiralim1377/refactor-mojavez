@@ -9,6 +9,8 @@ export default function LineChart({ data = [], title = "" }) {
 
   const seriesNames = Object.keys(data[0]).filter((key) => key !== "Year");
 
+  const font = vazirmatn.style.fontFamily;
+
   const series = seriesNames.map((name) => ({
     name,
     type: "line",
@@ -22,33 +24,33 @@ export default function LineChart({ data = [], title = "" }) {
       text: title,
       left: "center",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         fontSize: 14,
         fontWeight: "bold",
       },
     },
     tooltip: {
       trigger: "axis",
-      textStyle: { fontFamily: `var(${vazirmatn.variable})` },
+      textStyle: { fontFamily: font },
     },
     legend: {
       bottom: 0,
       left: "center",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         fontSize: 12,
       },
       data: seriesNames,
     },
     yAxis: {
       type: "value",
-      axisLabel: { fontFamily: `var(${vazirmatn.variable})` },
+      axisLabel: { fontFamily: font },
     },
     xAxis: {
       type: "category",
       data: data.map((item) => item.Year),
       axisLabel: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         interval: 0,
         rotate: 45,
       },

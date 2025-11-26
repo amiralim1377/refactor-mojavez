@@ -5,6 +5,8 @@ import ReactECharts from "echarts-for-react";
 import { vazirmatn } from "@/app/fonts/fonts";
 
 export default function DoughnutChart({ data = [], title = "" }) {
+  const font = vazirmatn.style.fontFamily;
+
   const option = {
     color: ["#4CAF50", "#FF9800", "#2196F3"],
     title: {
@@ -14,14 +16,14 @@ export default function DoughnutChart({ data = [], title = "" }) {
       textStyle: {
         fontSize: 12,
         fontWeight: "normal",
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         color: "#333",
       },
     },
     tooltip: {
       trigger: "item",
       formatter: "{b}: {c} ({d}%)",
-      textStyle: { fontFamily: `var(${vazirmatn.variable})` },
+      textStyle: { fontFamily: font },
       position: "top",
       confine: true,
     },
@@ -30,7 +32,7 @@ export default function DoughnutChart({ data = [], title = "" }) {
       left: "center",
       orient: "horizontal",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         fontSize: 12,
         color: "#333",
       },
@@ -48,7 +50,7 @@ export default function DoughnutChart({ data = [], title = "" }) {
             show: false,
             fontSize: 12,
             fontWeight: "bold",
-            fontFamily: `var(${vazirmatn.variable})`,
+            fontFamily: font,
             formatter: "{b}\n{d}%",
             padding: [3, 5, 3, 5],
           },

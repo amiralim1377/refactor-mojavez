@@ -13,6 +13,8 @@ export default function AgeDistributionChart({
 
   const ageRanges = data.map((item) => item.ageRange);
 
+  const font = vazirmatn.style.fontFamily;
+
   const series = seriesKeys.map(({ key, name, stack }) => ({
     name,
     type: "bar",
@@ -27,7 +29,7 @@ export default function AgeDistributionChart({
       text: title,
       left: "center",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         fontSize: 12,
         fontWeight: "bold",
       },
@@ -35,24 +37,24 @@ export default function AgeDistributionChart({
     tooltip: {
       trigger: "axis",
       axisPointer: { type: "shadow" },
-      textStyle: { fontFamily: `var(${vazirmatn.variable})` },
+      textStyle: { fontFamily: font },
     },
     legend: {
       bottom: 0,
       left: "center",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         fontSize: 12,
       },
     },
     xAxis: {
       type: "category",
       data: ageRanges,
-      axisLabel: { fontFamily: `var(${vazirmatn.variable})`, fontSize: 12 },
+      axisLabel: { fontFamily: font, fontSize: 12 },
     },
     yAxis: {
       type: "value",
-      axisLabel: { fontFamily: `var(${vazirmatn.variable})` },
+      axisLabel: { fontFamily: font },
     },
     series,
   };

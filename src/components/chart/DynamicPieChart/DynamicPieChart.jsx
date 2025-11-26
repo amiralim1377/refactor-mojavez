@@ -5,6 +5,8 @@ import ReactECharts from "echarts-for-react";
 import { vazirmatn } from "@/app/fonts/fonts";
 
 export default function DynamicPieChart({ data = [], title = "" }) {
+  const font = vazirmatn.style.fontFamily;
+
   const option = {
     color: ["#2196F3", "#4CAF50", "#9C27B0", "#FFEB3B", "#9E9E9E"],
     title: {
@@ -13,14 +15,14 @@ export default function DynamicPieChart({ data = [], title = "" }) {
       textStyle: {
         fontSize: 10,
         fontWeight: "bold",
-        fontFamily: `var(${vazirmatn.variable})`,
+        fontFamily: font,
         color: "#333",
       },
     },
     tooltip: {
       trigger: "item",
       formatter: "{b}: {c} ({d}%)",
-      textStyle: { fontFamily: `var(${vazirmatn.variable})` },
+      textStyle: { fontFamily: font },
       position: "left",
       confine: true,
     },
@@ -29,8 +31,8 @@ export default function DynamicPieChart({ data = [], title = "" }) {
       left: "center",
       orient: "horizontal",
       textStyle: {
-        fontFamily: `var(${vazirmatn.variable})`,
-        fontSize: 12,
+        fontFamily: font,
+        fontSize: 10,
         color: "#333",
       },
       icon: "circle",

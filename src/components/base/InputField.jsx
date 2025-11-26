@@ -28,7 +28,7 @@ export default function InputField({
         type={type}
         placeholder={placeholder}
         {...field}
-        className={`border border-gray-200 rounded-xl w-full p-3  ${
+        className={`border border-gray-200 rounded-xl w-full p-2  ${
           invalid ? "form-input-error" : ""
         }`}
       />
