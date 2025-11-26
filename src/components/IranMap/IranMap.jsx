@@ -41,10 +41,7 @@ export default function IranMap() {
         maxBoundsViscosity={1.0}
         maxZoom={12}
       >
-        <TileLayer
-          url="https://memaps.ir/hot/{z}/{x}/{y}.png"
-          attribution="© توسعه داده شده توسط امیرعلی مرادی نیا"
-        />
+        <TileLayer url="https://memaps.ir/hot/{z}/{x}/{y}.png" />
 
         {/* Create markers for cities */}
         {geoData &&

@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import FilterSection from "../FilterSection/FilterSection";
 import LicenseOverview from "../LicenseOverview/LicenseOverview";
 import MapWrapper from "../MapWrapper/MapWrapper";
