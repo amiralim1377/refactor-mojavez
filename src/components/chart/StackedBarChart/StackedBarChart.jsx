@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactECharts from "echarts-for-react";
 import { vazirmatn } from "@/app/fonts/fonts";
 
