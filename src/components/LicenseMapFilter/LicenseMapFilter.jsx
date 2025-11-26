@@ -11,9 +11,7 @@ function LicenseMapFilter() {
       </div>
 
       <div className="w-full lg:w-2/3 order-2 lg:order-2">
-        <Suspense fallback={<p>laodng</p>}>
-          <MapWrapper />
-        </Suspense>
+        <MapWrapper />
       </div>
 
       <div className="w-full lg:w-auto order-1 lg:order-3">
