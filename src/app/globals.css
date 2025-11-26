@@ -11,6 +11,20 @@ body {
   font-family: var(--font-vazirmatn);
 }
 
+@theme {
+  --header: oklch(0.295 0.1758 267.46);
+  --header-pattern: url("/pattern/patter.svg");
+}
+
+.bg-header-pattern {
+  background-image: var(--header-pattern);
+  background-color: var(--header);
+  background-repeat: repeat;
+  background-size: 50px 50px;
+  background-position: top left;
+  background-blend-mode: multiply;
+}
+
 .container {
   @apply mx-auto px-4;
   max-width: 1280px;
@@ -87,6 +101,7 @@ body {
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.708 0 0);
+  --header: oklch(0.295 0.1758 267.46);
 }
 
 .dark {
@@ -121,6 +136,7 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.439 0 0);
+  --header: oklch(0.295 0.1758 267.46);
 }
 
 @layer base {

@@ -11,7 +11,7 @@ const navLink = [
 
 function Header() {
   return (
-    <header className="bg-primary  p-4 flex items-center justify-around ">
+    <header className="bg-header-pattern  p-4 flex items-center justify-around ">
       <section className=" flex items-center justify-between container">
         <div>
           <Image

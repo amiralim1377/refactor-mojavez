@@ -36,12 +36,6 @@ This project is built using the following technologies:
 
 ## Installation
 
-```bash
-git clone https://github.com/amiralim1377/refactor-mojavez.git
-cd refactor-mojavez
-npm install
-npm run dev
-
 ```
 
 ## Usage
@@ -53,3 +47,4 @@ npm run dev
 ## License
 
 MIT License
+```
