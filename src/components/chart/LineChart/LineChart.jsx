@@ -19,6 +19,8 @@ export default function LineChart({ data = [], title = "" }) {
     smooth: true,
   }));
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 480;
+
   const option = {
     title: {
       text: title,
@@ -31,8 +33,19 @@ export default function LineChart({ data = [], title = "" }) {
     },
     tooltip: {
       trigger: "axis",
-      textStyle: { fontFamily: font },
+      textStyle: { fontFamily: font, fontSize: isMobile ? 10 : 12 },
+      confine: true,
+      position: function (pos, params, dom, rect, size) {
+        const obj = { top: 10 };
+        if (pos[0] + size.contentSize[0] > size.viewSize[0]) {
+          obj.left = pos[0] - size.contentSize[0] - 10;
+        } else {
+          obj.left = pos[0] + 10;
+        }
+        return obj;
+      },
     },
+
     legend: {
       bottom: 0,
       left: "center",
