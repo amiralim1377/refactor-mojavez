@@ -1,71 +1,57 @@
 "use client";
 
-import { MapContainer, TileLayer, GeoJSON, Marker, Popup } from "react-leaflet";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import { useState } from "react";
+import { IranMap } from "react-iran-map";
+import { IranProvincesMap } from "react-iran-provinces-map";
+import provincesData from "./provincesData";
+import provinceCityData from "./provinceCityData";
+import { Button } from "../ui/button";
+import { Home } from "lucide-react";
 
-export default function IranMap() {
-  const [geoData, setGeoData] = useState(null);
-  const router = useRouter();
-
-  // -----------------------------
-  // Define custom marker icon
-  // -----------------------------
-  const customIcon = new L.Icon({
-    iconUrl: "/geojson/location.svg",
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-  });
-
-  // -----------------------------
-  // Load GeoJSON file
-  // -----------------------------
-  useEffect(() => {
-    fetch("/geojson/marakez_shar_geojson.geojson")
-      .then((res) => res.json())
-      .then((data) => setGeoData(data));
-  }, []);
+export default function App() {
+  const [selectedProvince, setSelectedProvince] = useState(null);
 
   return (
-    <div className="w-full h-[50vh] md:h-[600px] ">
-      <MapContainer
-        center={[32, 53]}
-        zoom={5}
-        style={{ height: "100%", width: "100%" }}
-        maxBounds={[
-          [24, 44], // جنوب غربی ایران (lat, lng)
-          [40, 64], // شمال شرقی ایران (lat, lng)
-        ]}
-        maxBoundsViscosity={1.0}
-        maxZoom={12}
-      >
-        <TileLayer url="https://memaps.ir/hot/{z}/{x}/{y}.png" />
+    <div style={{ fontFamily: "Vazir", textAlign: "center", direction: "rtl" }}>
+      {!selectedProvince ? (
+        <>
+          <IranMap
+            data={provincesData}
+            colorRange="30, 70, 181"
+            width={800}
+            textColor="#000"
+            deactiveProvinceColor="#eee"
+            selectedProvinceColor="#3bcc6d"
+            tooltipTitle="تعداد شهر:"
+            selectProvinceHandler={(province) => setSelectedProvince(province)}
+          />
+        </>
+      ) : (
+        <>
+          <h2>استان: {selectedProvince.faName}</h2>
 
-        {/* Create markers for cities */}
-        {geoData &&
-          geoData.features
-            .filter((f) => f.geometry.type === "Point")
-            .map((city, idx) => (
-              <Marker
-                key={idx}
-                position={[
-                  city.geometry.coordinates[1],
-                  city.geometry.coordinates[0],
-                ]}
-                icon={customIcon}
-                eventHandlers={{
-                  click: () =>
-                    router.push(
-                      `?city=${encodeURIComponent(city.properties.name)}`
-                    ),
-                }}
-              >
-                <Popup>{city.properties.name}</Popup>
-              </Marker>
-            ))}
-      </MapContainer>
+          <Button
+            onClick={() => setSelectedProvince(null)}
+            className="mb-5 bg-blue-500  hover:bg-blue-600 text-white rtl px-4 py-2 flex items-center gap-2"
+          >
+            <Home className="w-4 h-4" />
+            نمای کلی
+          </Button>
+          <div className="my-iran-map">
+            <IranProvincesMap
+              province={selectedProvince.name}
+              provinceData={provinceCityData[selectedProvince.name]}
+              colorRange="30, 70, 181"
+              selectedProvinceColor="#3bcc6d"
+              tooltipTitle="تعداد:"
+              width={800}
+              selectProvinceHandler={(city) =>
+                console.log("شهر انتخاب شد:", city)
+              }
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
