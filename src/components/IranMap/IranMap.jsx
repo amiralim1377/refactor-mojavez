@@ -7,12 +7,15 @@ import provincesData from "./provincesData";
 import provinceCityData from "./provinceCityData";
 import { Button } from "../ui/button";
 import { Home } from "lucide-react";
+import { vazirmatn } from "@/app/fonts/fonts";
 
 export default function App() {
   const [selectedProvince, setSelectedProvince] = useState(null);
 
+  const font = vazirmatn.style.fontFamily;
+
   return (
-    <div style={{ fontFamily: "Vazir", textAlign: "center", direction: "rtl" }}>
+    <div style={{ fontFamily: font, textAlign: "center", direction: "rtl" }}>
       {!selectedProvince ? (
         <>
           <IranMap
