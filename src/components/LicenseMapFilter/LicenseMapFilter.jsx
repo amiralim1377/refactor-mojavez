@@ -5,7 +5,7 @@ import MapWrapper from "../MapWrapper/MapWrapper";
 function LicenseMapFilter() {
   return (
     <div className="flex  flex-col-reverse lg:flex-row items-start justify-between bg-white gap-4 p-4 rounded-2xl mt-4">
-      <div className="w-full lg:w-auto  order-3 lg:order-1">
+      <div className="w-full lg:w-[190px]  order-3 lg:order-1">
         <FilterSection />
       </div>
 
