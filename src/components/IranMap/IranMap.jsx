@@ -37,7 +37,7 @@ export default function App() {
             onClick={() => setSelectedProvince(null)}
             className="mb-5 bg-blue-500  hover:bg-blue-600 text-white rtl px-4 py-2 flex items-center gap-2"
           >
-            <Home className="w-4 h-4" />
+            <Home className="w-5 h-5" />
             نمای کلی
           </Button>
           <div className="my-iran-map">
