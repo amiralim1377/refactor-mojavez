@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { IranMap } from "react-iran-map";
-import { IranProvincesMap } from "react-iran-provinces-map";
 import provincesData from "./provincesData";
 import provinceCityData from "./provinceCityData";
 import { Button } from "../ui/button";
 import { Home } from "lucide-react";
 import { vazirmatn } from "@/app/fonts/fonts";
+import { IranProvincesMap } from "react-iran-provinces-map";
 
 export default function App() {
   const [selectedProvince, setSelectedProvince] = useState(null);
@@ -15,7 +15,10 @@ export default function App() {
   const font = vazirmatn.style.fontFamily;
 
   return (
-    <div style={{ fontFamily: font, textAlign: "center", direction: "rtl" }}>
+    <div
+      className="iran-map"
+      style={{ fontFamily: font, textAlign: "center", direction: "rtl" }}
+    >
       {!selectedProvince ? (
         <>
           <IranMap

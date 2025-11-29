@@ -10,7 +10,7 @@ const IranMap = dynamic(() => import("@/components/IranMap/IranMap"), {
 
 function MapWrapper() {
   return (
-    <div className="border w-full rounded-2xl p-2 min-h-[300px] sm:min-h-[400px] md:min-h-[600px] lg:min-h-[620px] min-w-full overflow-hidden">
+    <div className="border    w-full rounded-2xl p-2 min-h-[300px] sm:min-h-[400px] md:min-h-[600px] lg:min-h-[620px] min-w-full overflow-hidden">
       <IranMap />
     </div>
   );
